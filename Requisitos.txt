@@ -1,0 +1,24 @@
+Aplicação de cadastro de ingressos
+
+Entidades: 
+
+  Evento
+  Ingresso
+  Tipo de ingresso
+
+
+Evento: 
+  Nome
+  Descrição
+  Data
+  Abertura
+  Início
+  Classificação
+  
+Ingresso:
+  Lote
+  Valor
+  
+Tipo de ingresso
+  Inteira/meia
+  Região (plateira/balcão)
