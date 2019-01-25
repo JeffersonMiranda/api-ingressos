@@ -21,6 +21,12 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
 
+  'post /eventos/create': 'EventoController.create',
+  'get /eventos/getOne': 'EventoController.getOne',
+  'get /eventos/getAll': 'EventoController.getAll',
+  'post /eventos/update': 'EventoController.update',
+  'delete /eventos/delete': 'EventoController.delete',
+
 
   /***************************************************************************
   *                                                                          *

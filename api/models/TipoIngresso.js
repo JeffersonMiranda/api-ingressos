@@ -5,4 +5,4 @@ module.exports = {
 		regiao: { type: 'string', required: true } // PLATEIRA, BALCAO ETC...
 	}
 
-}
+};
