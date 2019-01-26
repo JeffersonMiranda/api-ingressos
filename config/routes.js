@@ -22,10 +22,22 @@ module.exports.routes = {
   '/': { view: 'pages/homepage' },
 
   'post /eventos/create': 'EventoController.create',
-  'get /eventos/getOne': 'EventoController.getOne',
-  'get /eventos/getAll': 'EventoController.getAll',
-  'post /eventos/update': 'EventoController.update',
-  'delete /eventos/delete': 'EventoController.delete',
+  'get /eventos/:id': 'EventoController.getOne',
+  'get /eventos/': 'EventoController.getAll',
+  'patch /eventos/:id': 'EventoController.update',
+  'delete /eventos/:id': 'EventoController.delete',
+
+  'post /ingressos/create': 'IngressoController.create',
+  'get /ingressos/:id': 'IngressoController.getOne',
+  'get /ingressos/': 'IngressoController.getAll',
+  'patch /ingressos/:id': 'IngressoController.update',
+  'delete /ingressos/:id': 'IngressoController.delete',
+
+  'post /tipo_ingressos/create': 'TipoIngressoController.create',
+  'get /tipo_ingressos/:id': 'TipoIngressoController.getOne',
+  'get /tipo_ingressos/': 'TipoIngressoController.getAll',
+  'patch /tipo_ingressos/:id': 'TipoIngressoController.update',
+  'delete /tipo_ingressos/:id': 'TipoIngressoController.delete',
 
 
   /***************************************************************************

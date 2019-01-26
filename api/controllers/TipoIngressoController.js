@@ -7,25 +7,30 @@
 
 module.exports = {
 	
-	create: function(req, res) {
+	create: async (req, res) => {
+		await TipoIngresso.create(req.body)		
 		return res.json({res: 'criado'})
 	},
 
-	getOne: function(req, res) {
-		return res.json({res: 'criado'})
+	getOne: async (req, res) => {
+    tipoIngresso = await TipoIngresso.find({ id: req.param('id') })
+    return res.json(tipoIngresso);
+  }, 
+
+	getAll: async (req, res) => {
+		tiposIngresso = await TipoIngresso.find()
+		return res.json(tipoIngressos);
 	},
 
-	getAll: function(req, res) {
-		return res.json({res: 'criado'})
+	update: async (req, res) => {
+		await TipoIngresso.updateOne({ id: req.param('id') }).set(req.body)
+		return res.json('updated')
 	},
 
-	update: function(req, res) {
-		return res.json({res: 'criado'})
-	},
-
-	delete: function(req, res) {
-		return res.json({res: 'criado'})
-	}
+	delete: async (req, res) => {
+		await TipoIngresso.destroyOne({ id: req.param('id') })
+    return res.json('deleted')
+  } 
 
 };
 

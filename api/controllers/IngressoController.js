@@ -7,24 +7,29 @@
 
 module.exports = {
 	
-	create: function(req, res) {
+	create: async (req, res) => {
+		await Ingresso.create(req.body)		
 		return res.json({res: 'criado'})
 	},
 
-	getOne: function(req, res) {
-		return res.json({res: 'criado'})
+	getOne: async (req, res) => {
+    ingresso = await Ingresso.find({ id: req.param('id') })
+    return res.json(ingresso);
+  }, 
+
+	getAll: async (req, res) => {
+		ingressos = await Ingresso.find()
+		return res.json(ingressos);
 	},
 
-	getAll: function(req, res) {
-		return res.json({res: 'criado'})
+	update: async (req, res) => {
+		await Ingresso.updateOne({ id: req.param('id') }).set(req.body)
+		return res.json('updated')
 	},
 
-	update: function(req, res) {
-		return res.json({res: 'criado'})
-	},
-
-	delete: function(req, res) {
-		return res.json({res: 'criado'})
-	}
+	delete: async (req, res) => {
+		await Ingresso.destroyOne({ id: req.param('id') })
+    return res.json('deleted')
+  } 
 
 };
