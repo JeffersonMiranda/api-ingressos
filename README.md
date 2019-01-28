@@ -2,6 +2,8 @@
 
 a [Sails v1](https://sailsjs.com) application
 
+Run the following command to execute the app
+sails lift
 
 ### Links
 
