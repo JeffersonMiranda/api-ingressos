@@ -13,13 +13,18 @@ module.exports = {
 	},
 
 	getOne: async (req, res) => {
-    evento = await Evento.find({ id: req.param('id') })
+    evento = await Evento.findOne({ id: req.param('id') })
     return res.json(evento);
   }, 
 
 	getAll: async (req, res) => {
 		eventos = await Evento.find()
 		return res.json(eventos);
+	},
+
+	getWithIngressos: async (req, res) => {
+		evento = await Evento.findOne({ id: req.param('id') }).populate('ingressos')
+		return res.json(evento);
 	},
 
 	update: async (req, res) => {

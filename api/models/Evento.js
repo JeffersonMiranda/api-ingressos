@@ -9,7 +9,8 @@ module.exports = {
 		inicio: { type: 'string', required: true },
 
 		ingressos: {
-			collection: 'Ingresso'
+			collection: 'Ingresso',
+			via: 'evento'
 		}
 	}
 };

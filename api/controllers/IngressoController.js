@@ -13,12 +13,12 @@ module.exports = {
 	},
 
 	getOne: async (req, res) => {
-    ingresso = await Ingresso.find({ id: req.param('id') })
+    ingresso = await Ingresso.findOne({ id: req.param('id') }).populate('evento')
     return res.json(ingresso);
   }, 
 
 	getAll: async (req, res) => {
-		ingressos = await Ingresso.find()
+		ingressos = await Ingresso.find().populate('evento')
 		return res.json(ingressos);
 	},
 

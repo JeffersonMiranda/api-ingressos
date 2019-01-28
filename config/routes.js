@@ -19,26 +19,18 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
-
-  'post /eventos/create': 'EventoController.create',
+  'post /eventos/': 'EventoController.create',
   'get /eventos/:id': 'EventoController.getOne',
   'get /eventos/': 'EventoController.getAll',
+  'get /eventos-with-ingressos/:id': 'EventoController.getWithIngressos',
   'patch /eventos/:id': 'EventoController.update',
   'delete /eventos/:id': 'EventoController.delete',
 
-  'post /ingressos/create': 'IngressoController.create',
+  'post /ingressos/': 'IngressoController.create',
   'get /ingressos/:id': 'IngressoController.getOne',
   'get /ingressos/': 'IngressoController.getAll',
   'patch /ingressos/:id': 'IngressoController.update',
-  'delete /ingressos/:id': 'IngressoController.delete',
-
-  'post /tipo_ingressos/create': 'TipoIngressoController.create',
-  'get /tipo_ingressos/:id': 'TipoIngressoController.getOne',
-  'get /tipo_ingressos/': 'TipoIngressoController.getAll',
-  'patch /tipo_ingressos/:id': 'TipoIngressoController.update',
-  'delete /tipo_ingressos/:id': 'TipoIngressoController.delete',
-
+  'delete /ingressos/:id': 'IngressoController.delete'
 
   /***************************************************************************
   *                                                                          *
